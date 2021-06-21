@@ -8,7 +8,7 @@ class task_t:
     def __init__(self):
         self.registrador = [0, 0, 0, 0]
         self.registrador_pc = 0
-        
+             
 class os_t:
     def __init__(self, cpu, memory, terminal):
         self.cpu = cpu
@@ -20,11 +20,11 @@ class os_t:
             "this is the console, type the commands here\n")
 
     def printk(self, msg):
-        self.terminal.kernel_print("Atenção!!! " + msg + "\n")
+        self.terminal.kernel_print("Atencao!!! " + msg + "\n")
 
     def panic(self, msg):
         self.terminal.end()
-        self.terminal.dprint("Atenção!!! kernel panic: " + msg)
+        self.terminal.dprint("Atencao!!! kernel panic: " + msg)
         self.cpu.cpu_alive = False
 
     def interrupt_keyboard(self):
@@ -46,9 +46,9 @@ class os_t:
         if interrupt == pycfg.INTERRUPT_KEYBOARD:
             self.interrupt_keyboard()
         elif interrupt == pycfg.INTERRUPT_TIMER:
-            self.printk("Atenção!!! Tempo não Implementado!")
+            self.printk("Atencao!!! Tempo nao Implementado!")
         elif interrupt == pycfg.INTERRUPT_MEMORY_PROTECTION_FAULT:
-            self.printk("Atenção!!! Sistema está com falta de memória")
+            self.printk("Atencao!!! Sistema esta com falta de memoria")
         return 
     
     
@@ -59,7 +59,7 @@ class os_t:
 
 
     def syscall(self):
-        self.printk("Atenção!!! Ainda não está implementado o syscall")
+        self.printk("Atencao!!! Ainda nao esta implementado o syscall")
         return
 
 
